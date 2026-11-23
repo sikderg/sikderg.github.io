@@ -5,7 +5,21 @@
 (function () {
   'use strict';
 
+  // Year the career started. Years of experience are counted from here.
+  var CAREER_START_YEAR = 2009;
+
   document.addEventListener('DOMContentLoaded', function () {
+    // Keep the years of experience current. The number in the HTML is the
+    // fallback shown when JavaScript is off.
+    var experience = new Date().getFullYear() - CAREER_START_YEAR;
+    document.querySelectorAll('.exp-years').forEach(function (el) {
+      el.textContent = experience;
+    });
+    var description = document.querySelector('meta[name="description"]');
+    if (description) {
+      description.content = description.content.replace(/\d+ years/, experience + ' years');
+    }
+
     // Keep the footer year current.
     var year = document.getElementById('year');
     if (year) {
