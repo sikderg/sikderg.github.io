@@ -1,0 +1,311 @@
+/* Goutam Sikder — profile site
+   Custom styles on top of Bootstrap 5.3 */
+
+:root {
+  --gs-ground: #F3F5F2;
+  --gs-surface: #FFFFFF;
+  --gs-ink: #14211C;
+  --gs-ink-soft: #36453F;
+  --gs-ink-muted: #4D5B55;
+  --gs-line: #DCE2DD;
+  --gs-dark: #11221C;
+  --gs-dark-text: #EEF3EF;
+  --gs-dark-muted: #A9BDB3;
+  --gs-mint: #8FD3B0;
+  --gs-accent: #1B6A4C;
+  --gs-accent-hover: #124A35;
+
+  --gs-font-body: Inter, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --gs-font-display: "Space Grotesk", Inter, system-ui, sans-serif;
+  --gs-font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  /* Bootstrap overrides */
+  --bs-body-bg: var(--gs-ground);
+  --bs-body-color: var(--gs-ink);
+  --bs-body-font-family: var(--gs-font-body);
+  --bs-body-line-height: 1.55;
+  --bs-link-color: var(--gs-accent);
+  --bs-link-color-rgb: 27, 106, 76;
+  --bs-link-hover-color: var(--gs-accent-hover);
+  --bs-link-hover-color-rgb: 18, 74, 53;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 72px; /* keeps headings clear of the sticky navbar */
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main { flex: 1 0 auto; }
+
+/* ---------- Navigation ---------- */
+
+.site-nav {
+  background: var(--gs-dark);
+  border-bottom: 1px solid rgba(238, 243, 239, 0.1);
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+.brand-mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 9px;
+  background: var(--gs-mint);
+  color: #0E1D17;
+  font-family: var(--gs-font-display);
+  font-weight: 700;
+  font-size: 15px;
+}
+
+.brand-text {
+  font-family: var(--gs-font-mono);
+  font-size: 14px;
+  letter-spacing: 0.02em;
+  color: var(--gs-dark-text);
+}
+
+.site-nav .nav-link {
+  padding: 10px 14px;
+  font-size: 15px;
+  color: #C9D8D0;
+}
+
+.site-nav .nav-link:hover,
+.site-nav .nav-link:focus,
+.site-nav .nav-link.active {
+  color: var(--gs-mint);
+}
+
+/* ---------- Hero ---------- */
+
+.hero {
+  background: var(--gs-dark);
+  color: var(--gs-dark-text);
+  padding: 56px 0 88px;
+}
+
+.eyebrow {
+  font-family: var(--gs-font-mono);
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gs-accent);
+}
+
+.eyebrow-light {
+  font-size: 14px;
+  color: var(--gs-mint);
+}
+
+.hero-title {
+  font-family: var(--gs-font-display);
+  font-weight: 700;
+  font-size: clamp(40px, 6vw, 68px);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+}
+
+.hero-lead {
+  max-width: 560px;
+  font-size: 20px;
+  line-height: 1.5;
+  color: #C9D8D0;
+}
+
+.hero-facts {
+  gap: 20px 40px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(238, 243, 239, 0.16);
+}
+
+.fact-value {
+  font-family: var(--gs-font-display);
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 1.1;
+}
+
+.fact-label {
+  margin-top: 4px;
+  font-size: 14px;
+  color: var(--gs-dark-muted);
+}
+
+.btn-mint {
+  --bs-btn-bg: var(--gs-mint);
+  --bs-btn-border-color: var(--gs-mint);
+  --bs-btn-color: #0E1D17;
+  --bs-btn-hover-bg: #A6DEC0;
+  --bs-btn-hover-border-color: #A6DEC0;
+  --bs-btn-hover-color: #0E1D17;
+  --bs-btn-active-bg: #7CC59F;
+  --bs-btn-active-border-color: #7CC59F;
+  --bs-btn-active-color: #0E1D17;
+  --bs-btn-focus-shadow-rgb: 143, 211, 176;
+}
+
+.hero .btn {
+  --bs-btn-font-size: 16px;
+  --bs-btn-font-weight: 600;
+  --bs-btn-padding-x: 22px;
+  --bs-btn-padding-y: 11px;
+  --bs-btn-border-radius: 10px;
+}
+
+.profile-photo {
+  width: 100%;
+  max-width: 320px;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 20px;
+  border: 1px solid rgba(238, 243, 239, 0.18);
+}
+
+/* ---------- Sections ---------- */
+
+.section { padding-top: 80px; }
+.section-last { padding-bottom: 88px; }
+
+.section-title {
+  font-family: var(--gs-font-display);
+  font-weight: 600;
+  font-size: clamp(26px, 3.4vw, 34px);
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+}
+
+.section-text {
+  font-size: 17px;
+  color: var(--gs-ink-soft);
+}
+
+.text-muted-ink {
+  font-size: 15px;
+  color: var(--gs-ink-muted);
+}
+
+/* ---------- Cards ---------- */
+
+.panel {
+  --bs-card-bg: var(--gs-surface);
+  --bs-card-border-color: var(--gs-line);
+  --bs-card-border-radius: 14px;
+  --bs-card-inner-border-radius: 13px;
+  --bs-card-spacer-x: 24px;
+  --bs-card-spacer-y: 24px;
+  --bs-card-color: var(--gs-ink);
+}
+
+.panel-title {
+  font-family: var(--gs-font-display);
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 1.25;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--gs-accent);
+}
+
+/* ---------- Skills ---------- */
+
+.skill-title {
+  margin-bottom: 16px;
+  font-family: var(--gs-font-display);
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 1.3;
+}
+
+.skill-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.skill-list li {
+  padding: 6px 12px;
+  border: 1px solid #D5DCD6;
+  border-radius: 999px;
+  background: var(--gs-ground);
+  font-size: 14px;
+  line-height: 20px;
+}
+
+/* ---------- Contact ---------- */
+
+.contact-body { padding: 40px; }
+
+.contact-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0 16px;
+  min-height: 48px;
+  border-bottom: 1px solid #E4E9E5;
+}
+
+.contact-row:last-child { border-bottom: 0; }
+
+.contact-row dt {
+  width: 130px;
+  font-family: var(--gs-font-mono);
+  font-weight: 400;
+  font-size: 13px;
+  color: var(--gs-ink-muted);
+}
+
+.contact-row dd {
+  margin: 0;
+  min-width: 0;
+  font-weight: 500;
+}
+
+.contact-row a {
+  display: inline-block;
+  padding: 10px 0;
+  overflow-wrap: anywhere;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+@media (max-width: 575.98px) {
+  .contact-body { padding: 24px; }
+  .contact-row { padding: 8px 0; }
+  .contact-row dt { width: 100%; }
+  .contact-row a { padding: 4px 0 10px; }
+}
+
+/* ---------- Footer ---------- */
+
+.site-footer {
+  background: var(--gs-dark);
+  color: var(--gs-dark-muted);
+  padding: 28px 0;
+  font-size: 14px;
+}
+
+.footer-mono {
+  font-family: var(--gs-font-mono);
+  font-size: 13px;
+}
