@@ -6,7 +6,7 @@
   'use strict';
 
   // Year the career started. Years of experience are counted from here.
-  var CAREER_START_YEAR = 2009;
+  var CAREER_START_YEAR = 2010;
 
   document.addEventListener('DOMContentLoaded', function () {
     // Keep the years of experience current. The number in the HTML is the
